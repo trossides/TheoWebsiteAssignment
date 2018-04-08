@@ -3687,3 +3687,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extens
 2018-04-08T20:09:57: Saving group "c:\users\rtheo\source\repos\theowebsiteassignment\theowebsiteassignment\env_assignment1\lib\site-packages\pytz"
 2018-04-08T20:09:57: End of group "c:\users\rtheo\source\repos\theowebsiteassignment\theowebsiteassignment\env_assignment1\lib\site-packages\pytz"
 2018-04-08T20:09:59: Deleting 0 files
+
+2018-04-09T00:03:50: Start analysis
+2018-04-09T00:03:50: IncludeModulesFromModulePath = win32com
+2018-04-09T00:03:53: Deleting 0 files
