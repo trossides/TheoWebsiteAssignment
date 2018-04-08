@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Clubs</title>
+</head>
+<body>
+    <h2>Clubs</h2>
+
+    <ul>
+        {% for club in clubs %}
+            <li>
+                <a href="/clubs/{{ club.id }}">
+                    {{ club.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
