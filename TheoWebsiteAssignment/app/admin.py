@@ -4,4 +4,3 @@ from django.contrib import admin
 from app.models import Club
 
 admin.site.register(Club)
-
