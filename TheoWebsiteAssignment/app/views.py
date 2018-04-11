@@ -23,6 +23,7 @@ def clubs(request):
 
 def clubdetails(request, id):
     club = Club.objects.get(pk = id);
+    print('this is the instance of  CLUB  %s' % club)
     return render_to_response('app/clubdetails.html', { 'club': club });
 
 def home(request):
