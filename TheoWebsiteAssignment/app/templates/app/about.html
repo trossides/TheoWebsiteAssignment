@@ -2,9 +2,60 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+<div class="jumbotron">
+    <h2>Describing my Data Model</h2>
+    <p class="lead">My data model has a table named 'Club'. I created a class in my model.py file which declaired this table and the fields it contains. 
+                    I am using the SQL lite database which is defined in my settings.py file. 
+                    I have in total 6 fields within my 'Club' class. The Primary Key (PK) for my 'Club' class was auto incremented thanks to the Django framework. The PK is an integer and is set to NOT NULL.                                   
+    </p>
+    <p>Below you can find the name for each of the 6 fields within my 'Club' class with a description:</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>name</h2>
+        <p><strong>What is it called:</strong> name</p>
+        <p><strong>What is its purpose:</strong> Name of the Club</p>
+        <p><strong>What data type:</strong> CharField (varchar)</p>
+        <p><strong>Validation or constraint requirements:</strong> NOT NULL, Max Length of 50 characters, Has a verbose_name property</p>
+    </div>
+    <div class="col-md-4">
+        <h2>year_formed</h2>
+        <p><strong>What is it called:</strong> year_formed</p>
+        <p><strong>What is its purpose:</strong> The year the Club was formed</p>
+        <p><strong>What data type:</strong> PositiveIntegerField (integer)</p>
+        <p><strong>Validation or constraint requirements:</strong> NOT NULL</p>
+    </div>
+    <div class="col-md-4">
+        <h2>president_name</h2>
+        <p><strong>What is it called:</strong> president_name</p>
+        <p><strong>What is its purpose:</strong> The president name of the Club</p>
+        <p><strong>What data type:</strong> CharField (varchar)</p>
+        <p><strong>Validation or constraint requirements:</strong> NOT NULL, Max length of 25 characters</p>
+    </div>
+</div>
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <div class="col-md-4">
+        <h2>email</h2>
+        <p><strong>What is it called:</strong> email</p>
+        <p><strong>What is its purpose:</strong> The contact email address for the Club</p>
+        <p><strong>What data type:</strong> EmailField (varchar)</p>
+        <p><strong>Validation or constraint requirements:</strong> NOT NULL, Has an auto character limit of 254</p>
+    </div>
+    <div class="col-md-4">
+        <h2>phone_number</h2>
+        <p><strong>What is it called:</strong> phone_number</p>
+        <p><strong>What is its purpose:</strong> The phone number to contact the Club</p>
+        <p><strong>What data type:</strong> CharField (varchar)</p>
+        <p><strong>Validation or constraint requirements:</strong> NOT NULL, Max length of 12 characters</p>
+    </div>
+    <div class="col-md-4">
+        <h2>club_nickname</h2>
+        <p><strong>What is it called:</strong> club_nickname</p>
+        <p><strong>What is its purpose:</strong> The Nickname of the Club</p>
+        <p><strong>What data type:</strong> CharField (varchar)</p>
+        <p><strong>Validation or constraint requirements:</strong> NOT NULL, Max length of 20 characters</p>
+    </div>
+</div>
 
 {% endblock %}

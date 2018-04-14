@@ -1,21 +1,20 @@
-﻿<!DOCTYPE html>
+﻿{% extends "app/layout.html" %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Clubs</title>
-</head>
-<body>
+{% block content %}
     <h2>Clubs</h2>
 
-    <ul>
-        {% for club in clubs %}
-            <li>
+    
+    {% for club in clubs %}
+        <div class="row">
+            <div class="col-md-3">
                 <a href="/clubs/{{ club.id }}">
                     {{ club.name }}
                 </a>
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+            </div>
+            <div class="col-md-3">
+                {{ club.club_nickname }}
+            </div>
+        </div>
+    {% endfor %}
+    
+{% endblock %}

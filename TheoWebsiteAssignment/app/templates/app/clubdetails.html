@@ -1,15 +1,12 @@
-﻿<!DOCTYPE html>
+﻿{% extends "app/layout.html" %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+{% block content %}
+        
     <h2>{{ club.name }}</h2>
+    <h3>Nickname: {{ club.club_nickname }}</h3>
     <h3>Year formed: {{ club.year_formed }}</h3>
     <h3>President: {{ club.president_name }}</h3>
     <h3>Email: {{ club.email }}</h3>
     <h3>Mobile Number: {{ club.phone_number }}</h3>
-</body>
-</html>
+    
+{% endblock %}
