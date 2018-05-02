@@ -1,0 +1,22 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+    <h2>Teams</h2>
+
+    
+    {% for team in teams %}
+        <div class="row">
+            <div class="col-md-3">
+                <a href="/teams/{{ team.id }}">
+                    {{ team.club }}
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="/teams/{{ team.id }}">
+                    {{ team.name }}
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+    
+{% endblock %}

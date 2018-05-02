@@ -25,6 +25,14 @@ def clubdetails(request, id):
     club = Club.objects.get(pk = id);
     return render_to_response('app/clubdetails.html', { 'club': club });
 
+def teams(request):
+    teams = Team.objects.all();
+    return render_to_response('app/teams.html', { 'teams': teams });
+
+def teamdetails(request, id):
+    team = Team.objects.get(pk = id);
+    return render_to_response('app/teamdetails.html', { 'team': team });
+
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)

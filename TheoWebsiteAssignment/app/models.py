@@ -27,3 +27,6 @@ class Team(models.Model):
     about = models.CharField(max_length=500)
     training_time = models.CharField(max_length=100)
     club = models.ForeignKey(Club)
+
+    def __str__(self):
+        return self.name
