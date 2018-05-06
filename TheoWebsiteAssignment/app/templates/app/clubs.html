@@ -7,7 +7,7 @@
     {% for club in clubs %}
         <div class="row">
             <div class="col-md-3">
-                <a href="/clubs/{{ club.id }}">
+                <a href="{% url 'clubdetails' club.id %}">
                     {{ club.name }}
                 </a>
             </div>

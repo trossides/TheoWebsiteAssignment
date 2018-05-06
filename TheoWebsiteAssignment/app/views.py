@@ -14,7 +14,10 @@ def clubcreate(request):
         return render(request, 'app/create.html', { 'form':form });
     elif request.method == "POST":
         form = ClubForm(request.POST);
-        form.save();
+        if form.is_valid():
+            form.save();
+        else:
+            return render(request, 'app/create.html', { 'form':form});
         return HttpResponseRedirect('/clubs');
 
 def clubs(request):
