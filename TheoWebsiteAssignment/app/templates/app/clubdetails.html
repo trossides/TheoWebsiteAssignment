@@ -2,11 +2,24 @@
 
 {% block content %}
         
-    <h2>{{ club.name }}</h2>
+   <!-- <h2>{{ club.name }}</h2>
     <h3>Nickname: {{ club.club_nickname }}</h3>
     <h3>Year formed: {{ club.year_formed }}</h3>
     <h3>President: {{ club.president_name }}</h3>
     <h3>Email: {{ club.email }}</h3>
-    <h3>Mobile Number: {{ club.phone_number }}</h3>
+    <h3>Mobile Number: {{ club.phone_number }}</h3>-->
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ edit_form.as_table }}
+        </table>
+        <button type="submit">Save</button>
+    </form>
+
+    <form action="{% url 'clubdelete' club.id %}" method="get">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
 
 {% endblock %}

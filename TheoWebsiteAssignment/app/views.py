@@ -8,6 +8,9 @@ from django.template import RequestContext
 from datetime import datetime
 from app.models import *;
 
+
+
+
 def clubcreate(request):
     if request.method == "GET":
         form = ClubForm();
@@ -20,14 +23,31 @@ def clubcreate(request):
             return render(request, 'app/create.html', { 'form':form});
         return HttpResponseRedirect('/clubs');
 
+def clubdelete(request, id):
+    item = Club.objects.get(id=id)
+    item.delete()
+    return HttpResponseRedirect('/clubs');
+
+
 def clubs(request):
     clubs = Club.objects.all();
     return render_to_response('app/clubs.html', { 'clubs': clubs });
 
 def clubdetails(request, id):
     club = Club.objects.get(pk = id);
-    return render_to_response('app/clubdetails.html', { 'club': club });
-
+    if request.method == "GET":
+        form = ClubForm(instance=club)
+        pagedata= { 'club': club, 'edit_form' : form }
+        return render(request, 'app/clubdetails.html', pagedata);
+    else:
+        form = ClubForm(request.POST, instance=club);
+        if form.is_valid():
+            form.save();
+        else:
+            pagedata= { 'club': club, 'edit_form' : form }
+            return render(request, 'app/clubdetails.html', pagedata);
+        return HttpResponseRedirect('/clubs');
+        
 def teams(request):
     teams = Team.objects.all();
     return render_to_response('app/teams.html', { 'teams': teams });
@@ -73,3 +93,4 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
