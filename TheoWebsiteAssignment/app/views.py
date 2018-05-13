@@ -101,7 +101,7 @@ def playerdelete(request, id):
     return HttpResponseRedirect('/players');
 
 def players(request):
-    players = Team.objects.all();
+    players = Player.objects.all();
     return render_to_response('app/players.html', { 'players': players });
 
 def playerdetails(request, id):

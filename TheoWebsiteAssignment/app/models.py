@@ -37,8 +37,9 @@ class TeamForm(forms.ModelForm):
         model = Team;
         fields = ['name', 'about', 'training_time', 'club'];
 
+#Player Models
 class Player(models.Model):
-    name = models.CharField("player",max_length=25)
+    captain_name = models.CharField("player",max_length=25)
     position = models.CharField(max_length=10)
     team = models.ForeignKey(Team)
 
@@ -48,4 +49,4 @@ class Player(models.Model):
 class PlayerForm(forms.ModelForm):
     class Meta:
         model = Player;
-        fields = ['name', 'position', 'team'];
+        fields = ['captain_name', 'position', 'team'];
