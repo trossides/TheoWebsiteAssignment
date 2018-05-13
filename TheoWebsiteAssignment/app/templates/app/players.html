@@ -1,17 +1,17 @@
 ﻿{% extends "app/layout.html" %}
 
 {% block content %}
-    <h2>Teams</h2>
+    <h2>Players</h2>
 
     
-    {% for team in teams %}
+    {% for player in players %}
         <div class="row">
             <div class="col-md-3">
-                {{ team.club }}
+                {{ player.team }}
             </div>
             <div class="col-md-3">
-                <a href="{% url 'teamdetails' team.id %}">
-                    {{ team.name }}
+                <a href="{% url 'playerdetails' player.id %}">
+                    {{ player.name }}
                 </a>
             </div>
         </div>

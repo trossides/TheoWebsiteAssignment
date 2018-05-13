@@ -15,21 +15,25 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = [
-    # Examples:
-
+    # Club url:
     url(r'^clubs$', app.views.clubs, name='clubs'),
     url(r'^clubs/create$', app.views.clubcreate, name='clubcreate'),
     url(r'^clubs/(?P<id>\d+)$', app.views.clubdetails, name='clubdetails'),
     url(r'^clubs/delete/(?P<id>\d+)$', app.views.clubdelete, name='clubdelete'),
 
+    #Team url:
     url(r'^teams$', app.views.teams, name='teams'),
     url(r'^teams/create$', app.views.teamcreate, name='teamcreate'),
     url(r'^teams/(?P<id>\d+)$', app.views.teamdetails, name='teamdetails'),
     url(r'^teams/delete/(?P<id>\d+)$', app.views.teamdelete, name='teamdelete'),
 
+    #Player url:
+    url(r'^players$', app.views.players, name='players'),
+    url(r'^players/create$', app.views.playercreate, name='playercreate'),
+    url(r'^players/(?P<id>\d+)$', app.views.playerdetails, name='playerdetails'),
+    url(r'^players/delete/(?P<id>\d+)$', app.views.playerdelete, name='playerdelete'),
 
-    #url(r'^clubs/(?P<name>[A-Za-z]+)$', app.views.clubdetails, name='artistdetails'),
-
+    #Generic url
     url(r'^$', app.views.home, name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),

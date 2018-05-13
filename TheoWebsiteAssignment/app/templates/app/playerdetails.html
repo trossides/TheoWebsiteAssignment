@@ -1,20 +1,16 @@
 ﻿{% extends "app/layout.html" %}
 
 {% block content %}
-        
-    <!--<h2>{{ team.name }}</h2>
-    <h3>About Team: {{ team.about }}</h3>
-    <h3>Training Details: {{ team.training_time }}</h3>-->
 
     <form action="" method="post">
         {% csrf_token %}
         <table>
-        {{ team_form.as_table }}
+        {{ player_form.as_table }}
         </table>
         <button type="submit">Save</button>
     </form>
 
-    <form action="{% url 'teamdelete' team.id %}" method="get">
+    <form action="{% url 'playerdelete' player.id %}" method="get">
         {% csrf_token %}
         <button type="submit">Delete</button>
     </form>

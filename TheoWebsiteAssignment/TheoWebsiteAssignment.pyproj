@@ -62,6 +62,8 @@
     <Content Include="app\templates\app\clubdetails.html" />
     <Content Include="app\templates\app\clubs.html" />
     <Content Include="app\templates\app\create.html" />
+    <Content Include="app\templates\app\playerdetails.html" />
+    <Content Include="app\templates\app\players.html" />
     <Content Include="app\templates\app\teamdetails.html" />
     <Content Include="app\templates\app\teams.html" />
     <Content Include="requirements.txt" />

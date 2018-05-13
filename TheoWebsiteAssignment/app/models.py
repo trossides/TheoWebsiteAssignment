@@ -5,7 +5,7 @@ Definition of models.
 from django.db import models
 from django import forms;
 
-# Create your models here.
+# Class models.
 class Club(models.Model):
     name = models.CharField("club",max_length=50, help_text='Name of the Club.')
     year_formed = models.PositiveIntegerField(help_text='The year the Club was formed.')
@@ -22,6 +22,7 @@ class ClubForm(forms.ModelForm):
         model = Club;
         fields = ['name', 'club_nickname', 'year_formed', 'president_name', 'email', 'phone_number'];
 
+#Team Models
 class Team(models.Model):
     name = models.CharField("team",max_length=50)
     about = models.CharField(max_length=500)
@@ -41,10 +42,10 @@ class Player(models.Model):
     position = models.CharField(max_length=10)
     team = models.ForeignKey(Team)
 
+    def __str__(self):
+        return self.name
+
 class PlayerForm(forms.ModelForm):
     class Meta:
         model = Player;
-        fields = ['name', 'position'];
-
-    def __str__(self):
-        return self.name
+        fields = ['name', 'position', 'team'];
