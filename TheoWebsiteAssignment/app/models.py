@@ -30,3 +30,21 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+class TeamForm(forms.ModelForm):
+    class Meta:
+        model = Team;
+        fields = ['name', 'about', 'training_time', 'club'];
+
+class Player(models.Model):
+    name = models.CharField("player",max_length=25)
+    position = models.CharField(max_length=10)
+    team = models.ForeignKey(Team)
+
+class PlayerForm(forms.ModelForm):
+    class Meta:
+        model = Player;
+        fields = ['name', 'position'];
+
+    def __str__(self):
+        return self.name

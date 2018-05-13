@@ -28,7 +28,6 @@ def clubdelete(request, id):
     item.delete()
     return HttpResponseRedirect('/clubs');
 
-
 def clubs(request):
     clubs = Club.objects.all();
     return render_to_response('app/clubs.html', { 'clubs': clubs });
@@ -47,14 +46,57 @@ def clubdetails(request, id):
             pagedata= { 'club': club, 'edit_form' : form }
             return render(request, 'app/clubdetails.html', pagedata);
         return HttpResponseRedirect('/clubs');
-        
+
+
+
+
+
+
+
+
+
+def teamcreate(request):
+    if request.method == "GET":
+        form = TeamForm();
+        return render(request, 'app/create.html', { 'form':form });
+    elif request.method == "POST":
+        form = TeamForm(request.POST);
+        if form.is_valid():
+            form.save();
+        else:
+            return render(request, 'app/create.html', { 'form':form});
+        return HttpResponseRedirect('/teams');
+
+def teamdelete(request, id):
+    item = Team.objects.get(id=id)
+    item.delete()
+    return HttpResponseRedirect('/teams');
+
 def teams(request):
     teams = Team.objects.all();
     return render_to_response('app/teams.html', { 'teams': teams });
 
 def teamdetails(request, id):
     team = Team.objects.get(pk = id);
-    return render_to_response('app/teamdetails.html', { 'team': team });
+    if request.method == "GET":
+        form = TeamForm(instance=team)
+        pagedata= { 'team': team, 'edit_form' : form }
+        return render(request, 'app/teamdetails.html', pagedata);
+    else:
+        form = TeamForm(request.POST, instance=team);
+        if form.is_valid():
+            form.save();
+        else:
+            pagedata= { 'team': team, 'edit_form' : form }
+            return render(request, 'app/teamdetails.html', pagedata);
+        return HttpResponseRedirect('/teams');
+        
+
+
+
+
+
+
 
 def home(request):
     """Renders the home page."""

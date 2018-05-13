@@ -20,9 +20,13 @@ urlpatterns = [
     url(r'^clubs$', app.views.clubs, name='clubs'),
     url(r'^clubs/create$', app.views.clubcreate, name='clubcreate'),
     url(r'^clubs/(?P<id>\d+)$', app.views.clubdetails, name='clubdetails'),
-    url(r'^teams$', app.views.teams, name='teams'),
-    url(r'^teams/(?P<id>\d+)$', app.views.teamdetails, name='teamdetails'),
     url(r'^clubs/delete/(?P<id>\d+)$', app.views.clubdelete, name='clubdelete'),
+
+    url(r'^teams$', app.views.teams, name='teams'),
+    url(r'^teams/create$', app.views.teamcreate, name='teamcreate'),
+    url(r'^teams/(?P<id>\d+)$', app.views.teamdetails, name='teamdetails'),
+    url(r'^teams/delete/(?P<id>\d+)$', app.views.teamdelete, name='teamdelete'),
+
 
     #url(r'^clubs/(?P<name>[A-Za-z]+)$', app.views.clubdetails, name='artistdetails'),
 
