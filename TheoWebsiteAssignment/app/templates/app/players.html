@@ -6,12 +6,15 @@
     
     {% for player in players %}
         <div class="row">
-            <div class="col-md=3">
+            <div class="col-md-4">
+                {{ player.team.club }}
+            </div>
+            <div class="col-md=4">
                 {{ player.team }}
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <a href="{% url 'playerdetails' player.id %}">
-                    {{ player.captain_name }}
+                {{ player.captain_name }}
                 </a>
             </div>
         </div>
