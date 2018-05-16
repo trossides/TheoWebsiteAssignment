@@ -7,14 +7,18 @@
     {% for team in teams %}
         <div class="row">
             <div class="col-md-3">
-                {{ team.club }}
-            </div>
-            <div class="col-md-3">
                 <a href="{% url 'teamdetails' team.id %}">
                     {{ team.name }}
                 </a>
             </div>
+            <div class="col-md-3">
+                {{ team.club }}
+            </div>
         </div>
     {% endfor %}
-    
+  
+<form action="{% url 'teamcreate' %}" method="get">
+    <button type="submit">Add Team</button>
+</form>
+  
 {% endblock %}
